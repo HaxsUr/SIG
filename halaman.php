@@ -1,12 +1,12 @@
 <?php 
-session_start();
+/*session_start();
 if($_SESSION['level'] !='kepala'){
 
 }
 if($_SESSION['level'] !='administrator'){
 
 }
-?>
+*/?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +18,8 @@ if($_SESSION['level'] !='administrator'){
 </head>
 <body>
     <div class="container">
+
+    
         <div class="sidebar">
             <div class="header">
                     <div class="list-item">
@@ -65,7 +67,14 @@ if($_SESSION['level'] !='administrator'){
                 </div>
             </div>
         </div>
+
         <div class="main-content">
+            <div id="menu-button">
+                <input type="checkbox" id="menu-checkbox">
+                <label for="menu-checkbox" id="menu-label">
+                    <div id="garis-3"></div>
+                </label>
+            </div>
             <span></span>
         </div>
     </div>
