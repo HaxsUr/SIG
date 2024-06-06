@@ -8,7 +8,7 @@
     min-height: 100vh;
 }
 .sidebar{
-    background-color: #111827;
+    background-color: #c9c9c9;
     width: 87px;
     padding: 24px;
     display: flex;
@@ -56,8 +56,16 @@
     box-sizing: border-box;
     margin-bottom: 30px;
 }
-.sidebar .header .list-item .icon{
-    margin-left: -11px;
+.sidebar .header .list-item .iconUtama{
+    width: 30px;
+    margin-left: -14px;
+    margin-right: 12px;
+    margin-bottom: 4px;
+}
+
+.sidebar .main .list-item .icon{
+    width: 30px;
+    margin-left: -4px;
     margin-right: 12px;
 }
 .sidebar .main .list-item .description{

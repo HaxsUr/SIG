@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2024 at 10:28 AM
+-- Generation Time: Jun 06, 2024 at 06:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,21 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_login`
+-- Table structure for table `tblogin`
 --
 
-CREATE TABLE `tb_login` (
-  `username` varchar(15) NOT NULL,
-  `password` varchar(15) NOT NULL
+CREATE TABLE `tblogin` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(11) NOT NULL,
+  `level` enum('kepala','administrator','pengguna') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `tb_login`
+-- Dumping data for table `tblogin`
 --
 
-INSERT INTO `tb_login` (`username`, `password`) VALUES
-('kepala', '1'),
-('teknisi', '$2y$10$lDcxUOhU');
+INSERT INTO `tblogin` (`username`, `password`, `level`) VALUES
+('rizal', '0', 'kepala'),
+('madan', '0', 'administrator'),
+('rizal', '123456', 'kepala'),
+('madan', '123456', 'administrator'),
+('subhan', '123456', 'pengguna'),
+('madan', '123456', ''),
+('subhan', '123456', 'pengguna'),
+('', '', ''),
+('subhan', '123456', 'pengguna');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

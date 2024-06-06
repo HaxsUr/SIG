@@ -23,7 +23,7 @@ if($_SESSION['level'] !='administrator'){
         <div class="sidebar">
             <div class="header">
                     <div class="list-item">
-                            <img src="assets/iconmap.jpg" alt="" class="icon">
+                            <img src="assets/iconUtama.png" alt="" class="iconUtama">
                             <span class="description-header">WEB GIS</span>
                     </div>
             </div>
@@ -31,37 +31,50 @@ if($_SESSION['level'] !='administrator'){
             <div class="main">
                 <div class="list-item">
                     <a href="halaman.php">
-                        <img src="" alt="" class="icon">
+                        <img src="assets/iconBeranda.png" alt="" class="icon">
                         <span class="description">BERANDA</span>
                     </a>
                 </div>
                 <div class="list-item">
                     <a href="#">
-                        <img src="" alt="" class="icon">
+                        <img src="assets/iconUser.png" alt="" class="icon">
                         <span class="description">PENGGUNA</span>
                     </a>
                 </div>
+                
                 <div class="list-item">
                     <a href="#">
-                        <img src="" alt="" class="icon">
+                        <img src="assets/iconKab.png" alt="" class="icon">
                         <span class="description">KABUPATEN</span>
                     </a>
                 </div>
                 <div class="list-item">
                     <a href="#">
-                        <img src="" alt="" class="icon">
+                        <img src="assets/iconPeta.png" alt="" class="icon">
+                        <span class="description">PETA</span>
+                    </a>
+                </div>
+                <div class="list-item">
+                    <a href="#">
+                        <img src="assets/iconTanda.png" alt="" class="icon">
                         <span class="description">TANDA</span>
                     </a>
                 </div>
                 <div class="list-item">
                     <a href="#">
-                        <img src="" alt="" class="icon">
+                        <img src="assets/iconKantor.png" alt="" class="icon">
                         <span class="description">KANTOR</span>
                     </a>
                 </div>
                 <div class="list-item">
+                    <a href="report.php">
+                        <img src="assets/iconReport.png" alt="" class="icon">
+                        <span class="description">REPORT</span>
+                    </a>
+                </div>
+                <div class="list-item">
                     <a href="logout.php">
-                        <img src="" alt="" class="icon">
+                        <img src="assets/iconLogout.png" alt="" class="icon">
                         <span class="description">LOGOUT</span>
                     </a>
                 </div>
