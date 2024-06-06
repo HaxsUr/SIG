@@ -1,0 +1,75 @@
+*{
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+.sidebar{
+    background-color: #111827;
+    width: 260px;
+    padding: 24px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.main-content{
+    background-color:#EEEEEEEE;
+    flex-grow: 1;
+}
+
+.sidebar .description-header{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 16px;
+    text-align: center;
+    color: black;
+
+}
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar .header .list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 30px;
+    border-radius: 8px;
+    background-color: yellow;
+    height: 40px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.sidebar .header .list-item .icon{
+    margin-left: -20px;
+    margin-right: 12px;
+}
+.sidebar .main .list-item .description{
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: center;
+    color: azure;
+    margin-left: 12px;
+}
+.sidebar .main .list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 8px;
+    width: 212px;
+    box-sizing: border-box;
+}
+
+.sidebar .main .list-item:hover{
+    background: #FF9900;
+    transition: all ease-in-out .1s;
+}
