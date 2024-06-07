@@ -1,7 +1,11 @@
 <?php
-    $con = mysqli_connect("localhost","root","","sig");
-    mysqli_select_db($con, "sig");
-    if ($con->connect_error) {
-        die("Connection failed: " . $connection->connect_error);
-    }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "sig";
+ 
+$conn = mysqli_connect($servername, $username, $password, $database);
+if(!$conn){
+    die("Koneksi Gagal: ". mysqli_connect_error());
+}
 ?>

@@ -1,5 +1,8 @@
 <?php 
-/*session_start();
+session_start();
+/*if($_SESSION['level']!=''){
+   header("location: halaman.php");
+}
 if($_SESSION['level'] !='kepala'){
 
 }
