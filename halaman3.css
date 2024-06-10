@@ -2,13 +2,17 @@
     font-family: 'Ubuntu', sans-serif;
     padding: 0;
     margin: 0;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .container{
     display: flex;
     min-height: 100vh;
 }
+
+/*Menu Side bar*/
 .sidebar{
-    background-color: #c9c9c9;
+    background-color:grey;
     width: 87px;
     padding: 24px;
     display: flex;
@@ -18,13 +22,12 @@
 }
 .sidebar.hide{
     width: 260px;
-    transition: all ease-out .3s;
+    transition: all ease-out 0.3s;
 }
 .main-content{
-    background-color:#EEEEEEEE;
+    background-color:white;
     flex-grow: 1;
 }
-
 .sidebar .description-header{
     font-family: 'Ubuntu';
     font-style: normal;
@@ -36,21 +39,18 @@
     display: none;
 
 }
-
 .sidebar.hide .description-header{
     display: contents;
 }
-
 .sidebar a {
     text-decoration: none;
 }
-
 .sidebar .header .list-item{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 20px 20px;
     border-radius: 8px;
+    padding: 20px 20px;
     background-color: yellow;
     height: 40px;
     box-sizing: border-box;
@@ -78,12 +78,11 @@
     color: azure;
     margin-left: 12px;
     display: none;
+    pointer-events: none;
 }
-
 .sidebar.hide .main .list-item .description{
     display: contents;
 }
-
 .sidebar .main .list-item{
     display: flex;
     flex-direction: row;
@@ -92,13 +91,18 @@
     border-radius: 8px;
     box-sizing: border-box;
 }
-
 .sidebar .main .list-item:hover{
     background: #FF9900;
     transition: all ease-in-out .1s;
 }
-
 /*Toggle Menu*/
+#menu-btn .iconMenu{
+    width: 30px;
+    position: relative;
+    padding: 30px;
+    display: flex;
+}
+
 #menu-button{
     width: 32px;
     position: absolute;
@@ -200,3 +204,4 @@
         transform: rotateZ(0);
     }
 }
+

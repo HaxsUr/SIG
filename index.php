@@ -1,9 +1,9 @@
 <?php 
-/*session_start();
-include 'koneksi.php';
-if ($_SESSION['level']!=''){
-    header("location: halaman.php");
-}*/
+session_start();
+if(isset($_SESSION['user'])){
+    echo "Anda Tidak Diperbolehkan Mengakses";
+    echo '<meta http-equiv="refresh" content="0.1; url=halaman.php">';
+} else {
 ?>
 
 <!DOCTYPE html>
@@ -24,3 +24,5 @@ if ($_SESSION['level']!=''){
     </div>
 </body>
 </html>
+<?php }
+?>

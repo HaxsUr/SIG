@@ -1,8 +1,4 @@
 <?php 
-session_start();
-if($_SESSION['user']=='' or $_SESSION['level']==''){
-    header("location: index.php");
-}
     include 'koneksi.php';
 
     $username = $_POST['user'];
