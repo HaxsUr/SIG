@@ -1,4 +1,6 @@
-<?php
+<?php  
+ header("Content-type:application/vnd-ms-word");
+ header("Content-Disposition: attachment; filename= DataKaryawan.docx");
 include "koneksi.php";
 
 $nama = mysqli_query($conn, "SELECT * FROM kepala");
@@ -7,10 +9,10 @@ $hasil = mysqli_fetch_array($nama);
 <!DOCTYPE html>
 <head>
     <title>Report</title>
-    <link rel="stylesheet" href="halaman.css">
 </head>
 <body>
-    <center class="report">
+    <div>
+    <center>
         <table >
             <tr>
                 <td><img src="assets/logokabupaten.png" alt="" width="90" height="90"></td>
@@ -89,29 +91,7 @@ $hasil = mysqli_fetch_array($nama);
                 <td width="400"></td>
                 <td style="text-align: right;font-size: 13px;" align="center"> Kepala <br><br><br><br> <?php echo $hasil['nama']?></td>
             </tr>
-        </table>
-        <br>
-      
+        </table><br>
     </center>
-    <center> 
-        <table width="552">
-            <tr>
-                <td width="100"></td>
-                <td style="text-align: center;font-size: 13px;"><button onclick="window.print()">Print</button></td>
-            </tr>
-            <?php 
-            session_start();
-            if($_SESSION['level']=='administrator'){ 
-                echo'<tr>
-                <td width="100"></td>
-                <td style="text-align: center;font-size: 13px;"><a href="form/edit.php"><button style="padding: 0.4% 0.8%; background-color: #009000; color : #fff;
-                border-radius: 2px; text-decoration:none;">Ubah</button></a>
-                </td></tr>';
-            } ?>
-           
-        </table></center>
-   
-    
-    <!-- <a href="form/cetakreport.php"><button>CETAK</button></a>-->
 </body>
 </html>

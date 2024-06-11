@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(isset($_SESSION['user'])){   
-    echo "Selamat Datang " . $_SESSION['user']. " level " . $_SESSION['level'];
+    //echo "Selamat Datang " . $_SESSION['user']. " level " . $_SESSION['level'];
     /*
     if($_SESSION['level'] !='kepala'){
     
@@ -18,12 +18,10 @@ if(isset($_SESSION['user'])){
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Halaman Utama SIG</title>
-    <link rel='stylesheet' href='halaman3.css'>
+    <link rel='stylesheet' href='halaman.css'>
 </head>
 <body>
     <div class='container'>
-
-    
         <div class='sidebar'>
             <div class='header'>
                     <div class='list-item'>
@@ -53,7 +51,7 @@ if(isset($_SESSION['user'])){
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='#'>
+                    <a href='peta/peta.php'>
                         <img src='assets/iconPeta.png' alt='' class='icon'>
                         <span class='description'>PETA</span>
                     </a>
@@ -94,7 +92,7 @@ if(isset($_SESSION['user'])){
             </div>
         </div>
     </div>
-    <script src='script.js'></script>
+    <script src='script2.js'></script>
 </body>
 </html> <?php } else{
     echo '<meta http-equiv="refresh" content="0.1; url=index.php">';

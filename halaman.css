@@ -9,6 +9,8 @@
     display: flex;
     min-height: 100vh;
 }
+.report{
+}
 
 /*Menu Side bar*/
 .sidebar{
@@ -95,6 +97,7 @@
     background: #FF9900;
     transition: all ease-in-out .1s;
 }
+
 /*Toggle Menu*/
 #menu-btn .iconMenu{
     width: 30px;

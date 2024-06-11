@@ -1,7 +1,6 @@
 <?php 
 session_start();
 if(isset($_SESSION['user'])){
-    echo "Anda Tidak Diperbolehkan Mengakses";
     echo '<meta http-equiv="refresh" content="0.1; url=halaman.php">';
 } else {
 ?>
