@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2024 at 04:53 AM
+-- Generation Time: Jun 11, 2024 at 04:46 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `sig`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kepala`
+--
+
+CREATE TABLE `kepala` (
+  `kd_kepala` varchar(11) NOT NULL,
+  `nama` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kepala`
+--
+
+INSERT INTO `kepala` (`kd_kepala`, `nama`) VALUES
+('MK-1', 'abah');
 
 -- --------------------------------------------------------
 
@@ -42,6 +60,16 @@ INSERT INTO `tblogin` (`username`, `password`, `level`) VALUES
 ('rijal', '123456', 'kepala'),
 ('afif', '123456', 'administrator'),
 ('subhan', '123456', 'administrator');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `kepala`
+--
+ALTER TABLE `kepala`
+  ADD PRIMARY KEY (`kd_kepala`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
