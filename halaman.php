@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if(isset($_SESSION['user'])){   
-    //echo "Selamat Datang " . $_SESSION['user']. " level " . $_SESSION['level'];
+   // echo "Selamat Datang " . $_SESSION['user']. " level " . $_SESSION['level'];
     /*
     if($_SESSION['level'] !='kepala'){
     
@@ -45,7 +45,7 @@ if(isset($_SESSION['user'])){
                 </div>
                 
                 <div class='list-item'>
-                    <a href='#'>
+                    <a href=''>
                         <img src='assets/iconKab.png' alt='' class='icon'>
                         <span class='description'>KABUPATEN</span>
                     </a>
@@ -57,7 +57,7 @@ if(isset($_SESSION['user'])){
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='#'>
+                    <a href='peta/marker.php'>
                         <img src='assets/iconTanda.png' alt='' class='icon'>
                         <span class='description'>TANDA</span>
                     </a>

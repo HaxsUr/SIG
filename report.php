@@ -45,7 +45,7 @@ $hasil = mysqli_fetch_array($nama);
         <table  width="552">
             <tr>
                 <td>
-                    <font size="2">Kepada Yang Terhormat <?php echo $hasil['nama']?></font>
+                    <font size="2">Kepada Yang Terhormat</font>
                 </td>
             </tr>
         </table>
@@ -98,6 +98,7 @@ $hasil = mysqli_fetch_array($nama);
             <tr>
                 <td width="100"></td>
                 <td style="text-align: center;font-size: 13px;"><button onclick="window.print()">Print</button></td>
+                <td style="text-align: center;font-size: 13px;"><a href="form/cetakreport.php">Print</a></td>
             </tr>
             <?php 
             session_start();
@@ -109,7 +110,8 @@ $hasil = mysqli_fetch_array($nama);
                 </td></tr>';
             } ?>
            
-        </table></center>
+        </table>
+    </center>
    
     
     <!-- <a href="form/cetakreport.php"><button>CETAK</button></a>-->

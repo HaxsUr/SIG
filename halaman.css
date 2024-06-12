@@ -9,7 +9,10 @@
     display: flex;
     min-height: 100vh;
 }
-.report{
+.map{   
+    position: absolute;
+    display: block;
+    width: 800px;
 }
 
 /*Menu Side bar*/

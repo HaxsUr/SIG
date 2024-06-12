@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2024 at 04:46 PM
+-- Generation Time: Jun 12, 2024 at 08:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,6 +38,27 @@ CREATE TABLE `kepala` (
 
 INSERT INTO `kepala` (`kd_kepala`, `nama`) VALUES
 ('MK-1', 'abah');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tanda`
+--
+
+CREATE TABLE `tanda` (
+  `nama` varchar(50) NOT NULL,
+  `jenis` varchar(40) NOT NULL,
+  `alamat` varchar(50) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tanda`
+--
+
+INSERT INTO `tanda` (`nama`, `jenis`, `alamat`, `latitude`, `longitude`) VALUES
+('Mesjid Agung Anwar', 'Mesjid', '2Q8F+5VW, Marabahan Kota, Kec. Marabahan, Kabupate', -2.979108, 114.77488);
 
 -- --------------------------------------------------------
 
