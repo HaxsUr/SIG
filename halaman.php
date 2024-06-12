@@ -45,7 +45,7 @@ if(isset($_SESSION['user'])){
                 </div>
                 
                 <div class='list-item'>
-                    <a href=''>
+                    <a href='tabel.php'>
                         <img src='assets/iconKab.png' alt='' class='icon'>
                         <span class='description'>KABUPATEN</span>
                     </a>
@@ -60,12 +60,6 @@ if(isset($_SESSION['user'])){
                     <a href='peta/marker.php'>
                         <img src='assets/iconTanda.png' alt='' class='icon'>
                         <span class='description'>TANDA</span>
-                    </a>
-                </div>
-                <div class='list-item'>
-                    <a href='#'>
-                        <img src='assets/iconKantor.png' alt='' class='icon'>
-                        <span class='description'>KANTOR</span>
                     </a>
                 </div>
                 <div class='list-item'>

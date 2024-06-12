@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "koneksi.php";
 
 $nama = mysqli_query($conn, "SELECT * FROM kepala");
@@ -10,7 +11,71 @@ $hasil = mysqli_fetch_array($nama);
     <link rel="stylesheet" href="halaman.css">
 </head>
 <body>
-    <center class="report">
+<div class='container'>
+        <div class='sidebar'>
+            <div class='header'>
+                    <div class='list-item'>
+                            <img src='assets/iconUtama.png' alt='' class='iconUtama'>
+                            <span class='description-header'>WEB GIS</span>
+                    </div>
+            </div>
+            
+            <div class='main'>
+                <div class='list-item'>
+                    <a href='halaman.php'>
+                        <img src='assets/iconBeranda.png' alt='' class='icon'>
+                        <span class='description'>BERANDA</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='#'>
+                        <img src='assets/iconUser.png' alt='' class='icon'>
+                        <span class='description'>PENGGUNA</span>
+                    </a>
+                </div>
+                
+                <div class='list-item'>
+                    <a href='tabel.php'>
+                        <img src='assets/iconKab.png' alt='' class='icon'>
+                        <span class='description'>KABUPATEN</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='peta/peta.php'>
+                        <img src='assets/iconPeta.png' alt='' class='icon'>
+                        <span class='description'>PETA</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='peta/marker.php'>
+                        <img src='assets/iconTanda.png' alt='' class='icon'>
+                        <span class='description'>TANDA</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='report.php'>
+                        <img src='assets/iconReport.png' alt='' class='icon'>
+                        <span class='description'>REPORT</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='logout.php'>
+                        <img src='assets/iconLogout.png' alt='' class='icon'>
+                        <span class='description'>LOGOUT</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class='main-content'>
+            <div id='menu-button'>
+                <input type='checkbox' id='menu-checkbox'>
+                <label for='menu-checkbox' id='menu-label'>
+                    <div id='garis-3'></div>
+                </label>
+            </div>
+            <div>
+            <center class="report">
         <table >
             <tr>
                 <td><img src="assets/logokabupaten.png" alt="" width="90" height="90"></td>
@@ -42,48 +107,60 @@ $hasil = mysqli_fetch_array($nama);
             </tr>
         </table>
         <br>
-        <table  width="552">
+        <table  width="452">
             <tr>
                 <td>
-                    <font size="2">Kepada Yang Terhormat</font>
+                    <font size="2">Kepada Yth. Bapak/Ibu</font>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <font size="2">Ditempat</font>
                 </td>
             </tr>
         </table>
-        <br>
+        <table width="552">
+            <tr>
+                <td>
+                    <font size="2">Assalamualikum Wr. Wb.</font>
+                </td>
+            </tr>
+        </table>
         <table  width="552">
             <tr>
                 <td>
-                    <font size="2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolore libero. Ut officia, 
-                        cupiditate optio ipsam veritatis voluptatum quasi ea fugit asperiores rerum blanditiis reiciendis placeat 
-                        maiores assumenda reprehenderit facere?
+                    <font size="2">Yang bertanda tangan di bawah ini, Gubernur Barito Kuala, 
+                        Ibu Kota Marabahan, Kecamatan Alalak Kelapa Gading, Desa Berangas Timur Menerangka Dengan Surat Fasilitas Umum Bahwa:
                     </font>
                 </td>
             </tr>
         </table>
         <br>
         <table  width="552">
+            
             <tr>
-                <td>Hari</td>
-                <td width="525">: Selasa</td>
+                <td><font size="2">Nama</font></td>
+                <td width="525"><font size="2">: <?php echo $hasil['nama']?></font> </td>
             </tr>
             <tr>
-                <td>Jam</td>
-                <td width="525">: 08:30</td>
+                <td><font size="2">Jabatan</font></td>
+                <td width="525"><font size="2": >Ketua Pemerintah Daerah Barito Kuala</font></td>
             </tr>
             <tr>
-                <td>Tempat</td>
-                <td width="525">: Ruang Lap</td>
+                <td><font size="2">Alamat</font></td>
+                <td width="525"><font size="2">:</font> </td>
             </tr>
         </table>
         <br>
         <table width="552" >
             <tr>
-                <td> <font size="2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui voluptatem nemo sapiente!
-                     Maiores tempora iure incidunt rem perspiciatis sequi ratione tempore magnam vero obcaecati? Quia s
-                     apiente aliquam id ipsum officiis!</font></td>
+                <td> <font size="2">1. Mesjid yang berlokasi di wilayah desa berangas timur yang menjadi perencanaan peningkatan kualitas jalur
+                     program Program Pembaharuan Mesjid tahun 2024 merupakan fasilitas umum milik desa. <br>
+                    2. Selaku Pemerintah Kota Mengizinkan melakukan peningkatan infrastruktur Mesjid dengan Konstruksi Alat Berat. <br>
+                    3. Pembangunan Pembaharun Mesjid telah melalui asistensi tegas.</font></td>
             </tr>
         </table>
-        <br>
+        <br><br><br><br>
         <table  width="552">
             <tr>
                 <td width="400"></td>
@@ -96,12 +173,11 @@ $hasil = mysqli_fetch_array($nama);
     <center> 
         <table width="552">
             <tr>
-                <td width="100"></td>
-                <td style="text-align: center;font-size: 13px;"><button onclick="window.print()">Print</button></td>
-                <td style="text-align: center;font-size: 13px;"><a href="form/cetakreport.php">Print</a></td>
+                <td width="552"></td>   
+                <td style="text-align: center;font-size: 13px;"><a href="form/cetakreport.php"><button style="padding: 0.4% 0.8%; background-color: #009000; color : #fff;
+                border-radius: 2px; text-decoration:none;">Print</button></a>
             </tr>
             <?php 
-            session_start();
             if($_SESSION['level']=='administrator'){ 
                 echo'<tr>
                 <td width="100"></td>
@@ -112,8 +188,10 @@ $hasil = mysqli_fetch_array($nama);
            
         </table>
     </center>
-   
+            </div>
+        </div>
+    </div>
+    <script src='script2.js'></script>
     
-    <!-- <a href="form/cetakreport.php"><button>CETAK</button></a>-->
 </body>
 </html>

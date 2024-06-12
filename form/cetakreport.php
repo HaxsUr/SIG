@@ -26,38 +26,38 @@ $pdf->Ln(15);
 // Spasi antara judul dan ISI
 
 // ISI
-$pdf->SetFont('Arial','',12);
+$pdf->SetFont('Arial','',9);
 $pdf->Cell(0,10,'Barito Kuala, 20 Mei 2024',0,1,'R');
 $pdf->Ln(2); 
 
-$pdf->SetFont('Arial','',12);
+$pdf->SetFont('Arial','',10);
 $pdf->Cell(0,1,'Nomor :-',0,1,'L');
 $pdf->Cell(0,10,'Perihal :-',0,1,'L');
-$pdf->Cell(0,20,'Kepada Yang Terhormat',0,1,'L');
-$pdf->Cell(190,3.5,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolore libero. Ut officia, 
-cupiditate',0,1,'L');
-$pdf->Cell(190,3.5,'optio ipsam veritatis voluptatum quasi ea fugit asperiores rerum blanditiis reiciendis placeat 
-maiores',0,1,'L');
-$pdf->Cell(190,3.5,'assumenda reprehenderit facere?',0,1,'L');
+$pdf->Cell(0,7,'                        Kepada Yth. Bapak/Ibu',0,1,'L');
+$pdf->Cell(0,10,'                        Ditempat',0,1,'L');
+$pdf->Cell(0,9,'Assalamualaikum Wr. Wb.',0,1,'L');
+$pdf->Cell(190,3.5,'   Yang bertanda tangan di bawah ini, Gubernur Barito Kuala, 
+Ibu Kota Marabahan, Kecamatan Alalak Kelapa Gading,',0,1,'L');
+$pdf->Cell(190,4.5,'Desa Berangas Timur Menerangka Dengan Surat Fasilitas Umum Bahwa:',0,1,'L'); 
 $pdf->Line(10, 40, 200, 40);
 $pdf->Ln(10);
 
-$pdf->SetFont('Arial','',12);
-$pdf->Cell(0,1,'Hari       : Selasa',0,1,'L');
-$pdf->Cell(0,10,'Jam       : 8.30',0,1,'L');
-$pdf->Cell(0,1,'Tempat  : Ruang Lap',0,1,'L');
+$pdf->SetFont('Arial','',10);
+$pdf->Cell(0,1,'Nama       : '.$hasil['nama'],0,1,'L');
+$pdf->Cell(0,10,'Jabatan    : Ketua',0,1,'L');
+$pdf->Cell(0,1,'Alamat      : ',0,1,'L');
 $pdf->Line(10, 40, 200, 40);
 $pdf->Ln(10);
-$pdf->Cell(190,3.5,'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolore libero. Ut officia, 
-cupiditate',0,1,'L');
-$pdf->Cell(190,3.5,'optio ipsam veritatis voluptatum quasi ea fugit asperiores rerum blanditiis reiciendis placeat 
-maiores',0,1,'L');
-$pdf->Cell(190,3.5,'assumenda reprehenderit facere?',0,1,'L');
+$pdf->Cell(190,4.5,'1. Mesjid yang berlokasi di wilayah desa berangas timur yang menjadi perencanaan peningkatan kualitas jalur
+program ',0,1,'L');
+$pdf->Cell(190,4.5,'Program Pembaharuan Mesjid tahun 2024 merupakan fasilitas umum milik desa.',0,1,'L');
+$pdf->Cell(190,4.5,'2. Selaku Pemerintah Kota Mengizinkan melakukan peningkatan infrastruktur Mesjid dengan Konstruksi Alat Berat.',0,1,'L');
+$pdf->Cell(190,4.5,'3. Pembangunan Pembaharun Mesjid telah melalui asistensi tegas.',0,1,'L');
 $pdf->Line(10, 40, 200, 40);
 
-$pdf->Ln(80);
+$pdf->Ln(75);
 
-$pdf->SetFont('Arial','',12);
+$pdf->SetFont('Arial','',10);
 $pdf->Cell(0,10,'Barito Kuala ',0,1,'R');
 $pdf->Cell(0,10,'Kepala Instansi',0,1,'R');
 $pdf->Ln(20);

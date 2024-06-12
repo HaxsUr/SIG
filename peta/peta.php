@@ -47,7 +47,7 @@
                 </div>
                 
                 <div class='list-item'>
-                    <a href='#'>
+                    <a href='../tabel.php'>
                         <img src='../assets/iconKab.png' alt='' class='icon'>
                         <span class='description'>KABUPATEN</span>
                     </a>
@@ -59,15 +59,9 @@
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='#'>
+                    <a href='marker.php'>
                         <img src='../assets/iconTanda.png' alt='' class='icon'>
                         <span class='description'>TANDA</span>
-                    </a>
-                </div>
-                <div class='list-item'>
-                    <a href='#'>
-                        <img src='../assets/iconKantor.png' alt='' class='icon'>
-                        <span class='description'>KANTOR</span>
                     </a>
                 </div>
                 <div class='list-item'>
@@ -85,14 +79,17 @@
             </div>
         </div>
 
-        <div class='main-content'>
+        <div class='main-content' style="background-color: aqua;">
             <div id='menu-button'>
                 <input type='checkbox' id='menu-checkbox'>
                 <label for='menu-checkbox' id='menu-label'>
                     <div id='garis-3'></div>
                 </label>
             </div> <br>
-			<table class="map"><tr><td width="1800"><div id="map"></div></td></tr></table>
+            <h1>MAP</h1>
+             <br>
+			<table><tr><td width="1800" ><div id="map"></div></td></tr></table>
+           
         </div>
     </div>
     <script src='../script2.js'></script>
