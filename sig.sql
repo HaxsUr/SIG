@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2024 at 08:01 AM
+-- Generation Time: Jun 17, 2024 at 06:55 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,15 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `kepala` (
   `kd_kepala` varchar(11) NOT NULL,
-  `nama` varchar(50) NOT NULL
+  `nama` varchar(50) NOT NULL,
+  `nip` int(11) NOT NULL,
+  `jabatan` varchar(40) NOT NULL,
+  `alamat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kepala`
 --
 
-INSERT INTO `kepala` (`kd_kepala`, `nama`) VALUES
-('MK-1', 'abah');
+INSERT INTO `kepala` (`kd_kepala`, `nama`, `nip`, `jabatan`, `alamat`) VALUES
+('MK-1', 'Iwak', 252525, 'Kepala Cabang', 'Jl. Sutoto');
 
 -- --------------------------------------------------------
 
@@ -48,7 +51,7 @@ INSERT INTO `kepala` (`kd_kepala`, `nama`) VALUES
 CREATE TABLE `tanda` (
   `nama` varchar(50) NOT NULL,
   `jenis` varchar(40) NOT NULL,
-  `alamat` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
   `latitude` double NOT NULL,
   `longitude` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -58,7 +61,8 @@ CREATE TABLE `tanda` (
 --
 
 INSERT INTO `tanda` (`nama`, `jenis`, `alamat`, `latitude`, `longitude`) VALUES
-('Mesjid Agung Anwar', 'Mesjid', '2Q8F+5VW, Marabahan Kota, Kec. Marabahan, Kabupate', -2.979108, 114.77488);
+('Mesjid Umar', 'Mesjid', '2Q8F+5VW, Marabahan Kota, Kec. Marabahan, Kabupaten', -2.979108, 114.77488),
+('Mesjid Umar', 'Mesjid', '2Q8F+5VW, Marabahan Kota, Kec. Marabahan, Kabupaten', -2.979108, 114.77488);
 
 -- --------------------------------------------------------
 
@@ -67,16 +71,16 @@ INSERT INTO `tanda` (`nama`, `jenis`, `alamat`, `latitude`, `longitude`) VALUES
 --
 
 CREATE TABLE `tblogin` (
-  `username` varchar(15) NOT NULL,
-  `password` varchar(11) NOT NULL,
-  `level` enum('kepala','administrator') NOT NULL
+  `pengguna` varchar(15) NOT NULL,
+  `sandi` varchar(11) NOT NULL,
+  `tingkatan` enum('kepala','administrator') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tblogin`
 --
 
-INSERT INTO `tblogin` (`username`, `password`, `level`) VALUES
+INSERT INTO `tblogin` (`pengguna`, `sandi`, `tingkatan`) VALUES
 ('madan', '123456', 'kepala'),
 ('rijal', '123456', 'kepala'),
 ('afif', '123456', 'administrator'),

@@ -53,15 +53,21 @@ $hasil = mysqli_fetch_array($nama);
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='report.php'>
+                    <a href='kantor.php'>
+                        <img src='assets/iconKantor.png' alt='' class='icon'>
+                        <span class='description'>KANTOR</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='form/cetakreport.php'>
                         <img src='assets/iconReport.png' alt='' class='icon'>
-                        <span class='description'>REPORT</span>
+                        <span class='description'>LAPORAN</span>
                     </a>
                 </div>
                 <div class='list-item'>
                     <a href='logout.php'>
                         <img src='assets/iconLogout.png' alt='' class='icon'>
-                        <span class='description'>LOGOUT</span>
+                        <span class='description'>KELUAR</span>
                     </a>
                 </div>
             </div>
@@ -75,7 +81,7 @@ $hasil = mysqli_fetch_array($nama);
                 </label>
             </div>
             <div>
-            <center class="report">
+            <center class="">
         <table >
             <tr>
                 <td><img src="assets/logokabupaten.png" alt="" width="90" height="90"></td>
@@ -126,7 +132,7 @@ $hasil = mysqli_fetch_array($nama);
                 </td>
             </tr>
         </table>
-        <table  width="552">
+        <table  width="552" >
             <tr>
                 <td>
                     <font size="2">Yang bertanda tangan di bawah ini, Gubernur Barito Kuala, 
@@ -144,11 +150,11 @@ $hasil = mysqli_fetch_array($nama);
             </tr>
             <tr>
                 <td><font size="2">Jabatan</font></td>
-                <td width="525"><font size="2": >Ketua Pemerintah Daerah Barito Kuala</font></td>
+                <td width="525"><font size="2">: <?php echo $hasil['jabatan']?></font></td>
             </tr>
             <tr>
                 <td><font size="2">Alamat</font></td>
-                <td width="525"><font size="2">:</font> </td>
+                <td width="525"><font size="2">: <?php echo $hasil['alamat']?></font> </td>
             </tr>
         </table>
         <br>
@@ -164,7 +170,7 @@ $hasil = mysqli_fetch_array($nama);
         <table  width="552">
             <tr>
                 <td width="400"></td>
-                <td style="text-align: right;font-size: 13px;" align="center"> Kepala <br><br><br><br> <?php echo $hasil['nama']?></td>
+                <td style="text-align: right;font-size: 13px;" align="center"> Kepala <br><br><br><br> <?php echo $hasil['nama']?> <br><br>NIPN. <?php echo $hasil['nip']?></td>
             </tr>
         </table>
         <br>
@@ -172,13 +178,8 @@ $hasil = mysqli_fetch_array($nama);
     </center>
     <center> 
         <table width="552">
-            <tr>
-                <td width="552"></td>   
-                <td style="text-align: center;font-size: 13px;"><a href="form/cetakreport.php"><button style="padding: 0.4% 0.8%; background-color: #009000; color : #fff;
-                border-radius: 2px; text-decoration:none;">Print</button></a>
-            </tr>
             <?php 
-            if($_SESSION['level']=='administrator'){ 
+            if($_SESSION['tingkatan']=='administrator'){ 
                 echo'<tr>
                 <td width="100"></td>
                 <td style="text-align: center;font-size: 13px;"><a href="form/edit.php"><button style="padding: 0.4% 0.8%; background-color: #009000; color : #fff;

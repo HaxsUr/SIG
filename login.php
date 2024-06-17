@@ -1,19 +1,19 @@
 <?php 
     include 'koneksi.php';
 
-    $username = $_POST['user'];
-    $password = $_POST['pass'];
+    $pengguna = $_POST['pengguna'];
+    $sandi = $_POST['sandi'];
 
-    $sql = mysqli_query($conn, "SELECT * FROM tblogin WHERE username = '$username' AND password = '$password'");
+    $sql = mysqli_query($conn, "SELECT * FROM tblogin WHERE pengguna = '$pengguna' AND sandi = '$sandi'");
     $row = mysqli_fetch_array($sql);
    if($row){
         session_start();
-        $_SESSION['user']=$row['username'];
-        $_SESSION['level']=$row['level'];
+        $_SESSION['pengguna']=$row['pengguna'];
+        $_SESSION['tingkatan']=$row['tingkatan'];
         header("location: halaman.php");
     } 
     if(mysqli_num_rows($sql) == 0){
-        echo '<script>alert("Username dan Password Salah, Silahkan Login Kembali."); document.location="index.php";</script>';
+        echo '<script>alert("Nama Pengguna dan Sandi Salah, Silahkan Login Kembali."); document.location="index.php";</script>';
     } else{
         echo '<script>alert("Anda Berhasil Login."); document.location="halaman.php";</script>';
     }

@@ -1,7 +1,7 @@
 <?php 
 session_start();
-if(isset($_SESSION['user'])){   
-   // echo "Selamat Datang " . $_SESSION['user']. " level " . $_SESSION['level'];
+if(isset($_SESSION['pengguna'])){   
+    //echo "Selamat Datang " . $_SESSION['user']. " level " . $_SESSION['level'];
     /*
     if($_SESSION['level'] !='kepala'){
     
@@ -63,15 +63,21 @@ if(isset($_SESSION['user'])){
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='report.php'>
+                    <a href='kantor.php'>
+                        <img src='assets/iconKantor.png' alt='' class='icon'>
+                        <span class='description'>KANTOR</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='form/cetakreport.php'>
                         <img src='assets/iconReport.png' alt='' class='icon'>
-                        <span class='description'>REPORT</span>
+                        <span class='description'>LAPORAN</span>
                     </a>
                 </div>
                 <div class='list-item'>
                     <a href='logout.php'>
                         <img src='assets/iconLogout.png' alt='' class='icon'>
-                        <span class='description'>LOGOUT</span>
+                        <span class='description'>KELUAR</span>
                     </a>
                 </div>
             </div>
@@ -83,8 +89,12 @@ if(isset($_SESSION['user'])){
                 <label for='menu-checkbox' id='menu-label'>
                     <div id='garis-3'></div>
                 </label>
+            </div><br> 
+            <div class="gambar">
+            <h1>Selamat Datang Madan</h1>
             </div>
-        </div>
+        </div> 
+        
     </div>
     <script src='script2.js'></script>
 </body>

@@ -10,28 +10,9 @@
     min-height: 100vh;
 }
 
-.tabel {
-    width: 70%;
-    border-collapse: collapse;
-    margin-top: 20px;
-
-}
-
-table, th, td {
-    border: 3px solid #23e473;
-}
-
-th, td {
-    padding: 8px;
-    text-align: relative;
-}
-
-th {
-    background-color: #f2f2f2;
-}
 /*Menu Side bar*/
 .sidebar{
-    background-color:grey;
+    background-color:rgb(199, 199, 199);
     width: 87px;
     padding: 24px;
     display: flex;
@@ -44,7 +25,7 @@ th {
     transition: all ease-out 0.3s;
 }
 .main-content{
-    background-color:white;
+    background-color:lightgray;
     flex-grow: 1;
 }
 .sidebar .description-header{
@@ -71,7 +52,7 @@ th {
     border-radius: 8px;
     padding: 20px 20px;
     background-color: yellow;
-    height: 40px;
+    height: 80px;
     box-sizing: border-box;
     margin-bottom: 30px;
 }
@@ -87,6 +68,7 @@ th {
     margin-left: -4px;
     margin-right: 12px;
 }
+/*Deskripsi Tulisan di Side bar*/
 .sidebar .main .list-item .description{
     font-family: 'Ubuntu';
     font-style: normal;
@@ -113,6 +95,13 @@ th {
 .sidebar .main .list-item:hover{
     background: #FF9900;
     transition: all ease-in-out .1s;
+}
+.edit{
+    padding: 0.4% 0.8%; 
+    background-color: #009900; 
+    color: #fff;
+    border-radius: 2px; 
+    text-decoration: none; 
 }
 
 /*Toggle Menu*/

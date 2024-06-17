@@ -65,15 +65,21 @@
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='../report.php'>
+                    <a href='../kantor.php'>
+                        <img src='../assets/iconKantor.png' alt='' class='icon'>
+                        <span class='description'>KANTOR</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='../form/cetakreport.php'>
                         <img src='../assets/iconReport.png' alt='' class='icon'>
-                        <span class='description'>REPORT</span>
+                        <span class='description'>LAPORAN</span>
                     </a>
                 </div>
                 <div class='list-item'>
                     <a href='../logout.php'>
                         <img src='../assets/iconLogout.png' alt='' class='icon'>
-                        <span class='description'>LOGOUT</span>
+                        <span class='description'>KELUAR</span>
                     </a>
                 </div>
             </div>
@@ -86,9 +92,9 @@
                     <div id='garis-3'></div>
                 </label>
             </div> <br>
-            <h1>MAP</h1>
+            <h1>PETA</h1>
              <br>
-			<table><tr><td width="1800" ><div id="map"></div></td></tr></table>
+			<table><tr><td width="1400" ><div id="map"></div></td></tr></table>
            
         </div>
     </div>
@@ -110,11 +116,41 @@
 	<script src="assets/js/leaflet-easyPrint-gh-pages/dist/bundle.js"></script>
 
 	<script>
-    var mymap = L.map('map').setView ([-2.965,115.356], 7);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //hybrid
+    var mymap = L.map('map').setView ([-2.9910250506310967, 114.75871110058658], 9);
+		L.tileLayer('http://mt0.google.com/vt/lyrs=y&hl=en&x={x}&y={y}&z={z}?access_token={accessToken}', {
+		maxZoom: 15,
+	id: 'mapbox.streets',
+	accessToken: 'pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ'
+	}).addTo(mymap);
+
+    //Tampilan Maps OpenStreetMap 
+		/* L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 15,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map); */
+
+        /*L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(mymap);*/
+
+    //Tampilan Maps Tampilan Satellite 
+		/* L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}?access_token={accessToken}', {
+		maxZoom: 25,
+		id: 'mapbox.streets',
+		accessToken: 'pk.eyJ1IjoiZmF1eml5dXNhcmFobWFuIiwiYSI6ImNsZmpiOXBqYTJnbzUzcnBnNnJzMjB0ZHMifQ.AldZlBJVQaCALzRw-vhWiQ'
+		}).addTo(map); */
+
+L.easyPrint({
+	title: 'Cetak Peta Kabupaten',
+	position: 'topleft',
+	sizeModes: ['A4Portrait', 'A4Landscape']
+	}).addTo(mymap);
+
+/*L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mymap);
+}).addTo(mymap);*/
 
 // Tambahkan GeoJSON dari file eksternal
 fetch('assets/geojson/63.04 Kabupaten Barito Kuala - Marabahan.geojson')
@@ -122,18 +158,26 @@ fetch('assets/geojson/63.04 Kabupaten Barito Kuala - Marabahan.geojson')
     .then(data => {
         L.geoJSON(data).addTo(mymap);
     });
-
+function popUp(f,l){
+	var out = [];
+	if (f.properties){
+		for(key in f.properties){
+			out.push(key+": "+f.properties[key]);
+		}
+		l.bindPopup(out.join("<br />"));
+	}
+	}
     // Data dari PHP
     var dataKomoditas = <?php echo json_encode($data_komoditas); ?>;
 
 
-    // Fungsi untuk menentukan warna marker
+    /* Fungsi untuk menentukan warna marker
     function getColor(jumlah) {
         return jumlah > 100 ? 'red' :
                jumlah > 50  ? 'orange' :
                jumlah > 20  ? 'yellow' :
                               'green';
-    }        
+    }       */
 
     // Tambahkan marker ke peta
     dataKomoditas.forEach(function(komoditas) {

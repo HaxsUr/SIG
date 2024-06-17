@@ -1,5 +1,6 @@
 <?php
 require 'koneksi.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@ require 'koneksi.php';
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Halaman Utama SIG</title>
     <link rel='stylesheet' href='halaman.css'>
+    <link rel="stylesheet" href="tabel.css">
     </head>
     <body>
     <div class='container'>
@@ -27,7 +29,7 @@ require 'koneksi.php';
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='pengguna.php   '>
+                    <a href=''>
                         <img src='assets/iconUser.png' alt='' class='icon'>
                         <span class='description'>PENGGUNA</span>
                     </a>
@@ -52,15 +54,21 @@ require 'koneksi.php';
                     </a>
                 </div>
                 <div class='list-item'>
-                    <a href='report.php'>
+                    <a href='kantor.php'>
+                        <img src='assets/iconKantor.png' alt='' class='icon'>
+                        <span class='description'>KANTOR</span>
+                    </a>
+                </div>
+                <div class='list-item'>
+                    <a href='form/cetakreport.php'>
                         <img src='assets/iconReport.png' alt='' class='icon'>
-                        <span class='description'>REPORT</span>
+                        <span class='description'>LAPORAN</span>
                     </a>
                 </div>
                 <div class='list-item'>
                     <a href='logout.php'>
                         <img src='assets/iconLogout.png' alt='' class='icon'>
-                        <span class='description'>LOGOUT</span>
+                        <span class='description'>KELUAR</span>
                     </a>
                 </div>
             </div>
@@ -72,14 +80,14 @@ require 'koneksi.php';
                 <label for='menu-checkbox' id='menu-label'>
                     <div id='garis-3'></div>
                 </label>
-            </div>
-            <main class="tabel">
+            </div><br>
+            <main>
                 <div>
                     <h1>Data FASUM Wilayah KABUPATEN BARITO KUALA</h1>
                     <div>
                         <div>
                             Tabel Informasi FASUM
-                        </div>
+                        </div> <br>
                         <div>
                             <table>
                                 <thead>
@@ -108,9 +116,12 @@ require 'koneksi.php';
                                             echo "<td>" . $row['alamat'] . "</td>";
                                             echo "<td>" . $row['latitude'] . "</td>";
                                             echo "<td>" . $row['longitude'] . "</td>";
-                                            echo "<td><a href='editdata.php?alamat=" . $row['alamat'] . "' class='btn btn-primary btn-sm'>Edit</a></td>";
-                                            echo "<td><a href='hapusdata.php?alamat=" . $row['alamat'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a></td>";
-                                            echo "</tr>";
+                                            if($_SESSION['tingkatan']=='administrator'){ 
+                                            echo "<td><a href='editdata.php?alamat=" . $row['alamat'] . "' style='padding: 0.4% 0.8%; background-color: #009900; color: #fff;
+                                            border-radius: 2px; text-decoration: none; '>Edit</a></td>";
+                                            echo "<td><a href='hapusdata.php?alamat=" . $row['alamat'] . "' style='padding: 0.4% 0.8%; background-color: #009900; color: #fff;
+                                            border-radius: 2px; text-decoration: none; ' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a></td>";
+                                            echo "</tr>";}
                                         }   
                                     } else {
                                         echo "<tr><td colspan='8'>Tidak ada data</td></tr>";
@@ -118,9 +129,8 @@ require 'koneksi.php';
                                 ?>
                                 </tbody>
                             </table><br></br>
-                            <!-- echo "<td><a href='peta/marker.php?id=" . $row['nama'] . "' class='btn btn-primary btn-sm'>Tambah</a></td>"; -->
                             <a href="peta/marker.php" style="padding: 0.4% 0.8%; background-color: #009900; color: #fff;
-        border-radius: 2px; text-decoration: none; ">Tambah Data</a>
+                                border-radius: 2px; text-decoration: none; ">Tambah Data</a>
                         </div>
                     </div>
                 </div>

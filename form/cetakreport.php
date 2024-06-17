@@ -10,7 +10,7 @@ $pdf->AddPage();
 
 // Tambahkan logo
 if (file_exists('logo.png')) { // Menggunakan file PNG
-    $pdf->Image('logo.png', 10, 10, 15);
+    $pdf->Image('logo.png', 5, 7, 20);
 } else {
     $pdf->SetFont('Arial', 'B', 12);
     $pdf->Cell(0, 10, 'Logo tidak ditemukan', 0, 1, 'C');
@@ -44,8 +44,8 @@ $pdf->Ln(10);
 
 $pdf->SetFont('Arial','',10);
 $pdf->Cell(0,1,'Nama       : '.$hasil['nama'],0,1,'L');
-$pdf->Cell(0,10,'Jabatan    : Ketua',0,1,'L');
-$pdf->Cell(0,1,'Alamat      : ',0,1,'L');
+$pdf->Cell(0,10,'Jabatan    : '.$hasil['jabatan'],0,1,'L');
+$pdf->Cell(0,1,'Alamat      : '.$hasil['alamat'],0,1,'L');
 $pdf->Line(10, 40, 200, 40);
 $pdf->Ln(10);
 $pdf->Cell(190,4.5,'1. Mesjid yang berlokasi di wilayah desa berangas timur yang menjadi perencanaan peningkatan kualitas jalur
@@ -55,13 +55,15 @@ $pdf->Cell(190,4.5,'2. Selaku Pemerintah Kota Mengizinkan melakukan peningkatan 
 $pdf->Cell(190,4.5,'3. Pembangunan Pembaharun Mesjid telah melalui asistensi tegas.',0,1,'L');
 $pdf->Line(10, 40, 200, 40);
 
-$pdf->Ln(75);
+$pdf->Ln(65);
 
 $pdf->SetFont('Arial','',10);
 $pdf->Cell(0,10,'Barito Kuala ',0,1,'R');
 $pdf->Cell(0,10,'Kepala Instansi',0,1,'R');
 $pdf->Ln(20);
 $pdf->Cell(0,10,''.$hasil['nama'],0,1,'R');
+$pdf->Ln(0);
+$pdf->Cell(0,5,'NIPN. '.$hasil['nip'],0,1,'R');
 // Output PDF ke browser
 $pdf->Output('Laporan-Komoditas-Barito Kuala.pdf', 'I');
 ?>
